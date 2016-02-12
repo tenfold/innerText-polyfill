@@ -30,6 +30,12 @@ if ( (!('innerText' in document.createElement('a'))) && ('getSelection' in windo
         // Oh look, this is what we wanted.
         // String representation of the element, close to as rendered.
         return str;
-    })
+    });
+    
+    HTMLElement.prototype.__defineSetter__("innerText", function(str) {
+
+      this.innerHTML = str.replace(/\n/g, "<br />");
+
+    });
 }
 
