@@ -33,9 +33,7 @@ if ( (!('innerText' in document.createElement('a'))) && ('getSelection' in windo
     });
     
     HTMLElement.prototype.__defineSetter__("innerText", function(str) {
-
-      this.innerHTML = str.replace(/\n/g, "<br />");
-
+        this.innerHTML = str.replace(/\n/g, "<br />");
     });
 }
 
